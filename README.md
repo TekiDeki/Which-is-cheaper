@@ -1,18 +1,3 @@
-Which-is-cheaper/
-├── index.html
-├── manifest.json
-├── sw.js
-├── icon-192.png
-├── icon-512.png
-├── og-image.png
-├── LICENSE
-├── NOTICE
-└── README.md# 🛒 Which is Cheaper?
-
-> **Instant price-per-unit comparison. Free, offline-ready, no signup.**
-
-A tiny single-page web app that answers one question in seconds:
-
 **Which of these two products is actually cheaper?**
 
 Type in two products (price + size), and the app instantly tells you the
@@ -97,5 +82,3 @@ tells you honestly: *"Different unit types - can't compare."*
 No external CDNs. No analytics. No fonts to download. No tracking.
 
 ---
-
-## 📁 Project Structure
