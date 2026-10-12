@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- ==================== SEO PRIMARY ==================== -->
+<title>Which is Cheaper? — Instant Price Per Unit Calculator</title>
+<meta name="description" content="Compare two products instantly and find out which is cheaper per unit. Free, fast, mobile-friendly price-per-unit calculator. Works for groceries, bulk deals, and more.">
+<meta name="keywords" content="price per unit calculator, which is cheaper, unit price comparison, grocery price compare, bulk deal calculator, cheapest per gram, price comparison tool">
+<meta name="author" content="TekiDeki">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="rating" content="general">
+<meta name="revisit-after" content="30 days">
+<link rel="canonical" href="https://tekideki.github.io/Which-is-cheaper/">
+
+<!-- ==================== ALTERNATE LANGUAGES (hreflang) ==================== -->
+<link rel="alternate" hreflang="en" href="https://tekideki.github.io/Which-is-cheaper/">
+<link rel="alternate" hreflang="ro" href="https://tekideki.github.io/Which-is-cheaper/?lang=ro">
+<link rel="alternate" hreflang="sr-Latn" href="https://tekideki.github.io/Which-is-cheaper/?lang=sr-latn">
+<link rel="alternate" hreflang="sr-Cyrl" href="https://tekideki.github.io/Which-is-cheaper/?lang=sr-cyrl">
+<link rel="alternate" hreflang="x-default" href="https://tekideki.github.io/Which-is-cheaper/">
+
+<!-- ==================== OPEN GRAPH (Facebook, LinkedIn, etc.) ==================== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Which is Cheaper?">
+<meta property="og:title" content="Which is Cheaper? — Instant Price Per Unit Calculator">
+<meta property="og:description" content="Stop guessing in the grocery aisle. Compare two products and see which is truly cheaper per unit — instantly.">
+<meta property="og:url" content="https://tekideki.github.io/Which-is-cheaper/">
+<meta property="og:image" content="https://tekideki.github.io/Which-is-cheaper/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Which is Cheaper? — Price per unit comparison tool">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ro_RO">
+<meta property="og:locale:alternate" content="sr_RS">
+
+<!-- ==================== TWITTER CARD ==================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Which is Cheaper? — Instant Price Per Unit Calculator">
+<meta name="twitter:description" content="Compare two products and find out which is really cheaper per unit. Free, no signup, works offline.">
+<meta name="twitter:image" content="https://tekideki.github.io/Which-is-cheaper/og-image.png">
+<meta name="twitter:image:alt" content="Price per unit comparison tool">
+<meta name="twitter:creator" content="@TekiDeki">
+
+<!-- ==================== THEME / PWA ==================== -->
+<meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f1f5f9" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cheaper?">
+<meta name="application-name" content="Cheaper?">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- ==================== FAVICON (inline SVG, no extra file) ==================== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='bold' text-anchor='middle' fill='%2338bdf8'%3E%24%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='bold' text-anchor='middle' fill='%2338bdf8'%3E%24%3C/text%3E%3C/svg%3E">
+
+<!-- ==================== JSON-LD STRUCTURED DATA ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Which is Cheaper?",
+  "alternateName": "Price Per Unit Calculator",
+  "url": "https://tekideki.github.io/Which-is-cheaper/",
+  "description": "A free mobile-first web app that instantly compares two products and shows which is cheaper per unit. Supports mass (g, kg, oz, lb), volume (ml, L), and count units.",
+  "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "Calculator",
+  "operatingSystem": "Any (web-based)",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": ["en", "ro", "sr-Latn", "sr-Cyrl"],
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Instant price-per-unit comparison",
+    "Automatic unit conversion (g, kg, oz, lb, ml, L)",
+    "Mobile-first touch-friendly interface",
+    "Light and dark theme",
+    "Multi-language support",
+    "Works offline",
+    "Shareable comparison links"
+  ],
+  "screenshot": "https://tekideki.github.io/Which-is-cheaper/og-image.png",
+  "author": {
+    "@type": "Organization",
+    "name": "TekiDeki",
+    "url": "https://paypal.me/TekiDeki"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate price per unit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the total price by the quantity (in grams, kilograms, milliliters, liters, or count). The product with the lower price per unit is the better deal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After the first load, the entire app runs in your browser without an internet connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which units are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mass: grams, kilograms, ounces, pounds. Volume: milliliters, liters. Plus a generic count unit for items like eggs, rolls, or bottles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Everything runs locally in your browser. No data is sent to any server, and no account is required."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tekideki.github.io/Which-is-cheaper/" },
+    { "@type": "ListItem", "position": 2, "name": "Which is Cheaper?", "item": "https://tekideki.github.io/Which-is-cheaper/" }
+  ]
+}
+</script>
+
+<link rel="manifest" href="./manifest.json">
+
+<style>
+  :root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --card2:#273449;
+    --text:#f1f5f9;
+    --muted:#94a3b8;
+    --accent:#38bdf8;
+    --accent-text:#0b1220;
+    --win:#22c55e;
+    --lose:#ef4444;
+    --border:#334155;
+    --toast-bg:#22c55e;
+    --toast-text:#04140a;
+    --donate-bg:#facc15;
+    --donate-text:#1a1500;
+  }
+  html[data-theme="light"]{
+    --bg:#f1f5f9;
+    --card:#ffffff;
+    --card2:#f8fafc;
+    --text:#0f172a;
+    --muted:#64748b;
+    --accent:#0284c7;
+    --accent-text:#ffffff;
+    --win:#16a34a;
+    --lose:#dc2626;
+    --border:#cbd5e1;
+    --toast-bg:#16a34a;
+    --toast-text:#ffffff;
+    --donate-bg:#eab308;
+    --donate-text:#1a1500;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;min-height:100%}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:16px 14px 28px;
+    min-height:100vh;
+    overflow-x:hidden;
+    transition:background .2s, color .2s;
+  }
+  .topbar{
+    width:100%;
+    max-width:440px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    margin-bottom:10px;
+  }
+  .topbar .controls{
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+  .icon-btn{
+    background:var(--card);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:12px;
+    min-width:48px;
+    min-height:48px;
+    padding:0 12px;
+    font-size:1.15rem;
+    font-family:inherit;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:transform .08s,background .15s;
+  }
+  .icon-btn:active{transform:scale(.95)}
+  select.lang-select{
+    background:var(--card);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:12px;
+    min-height:48px;
+    padding:0 32px 0 12px;
+    font-size:.9rem;
+    font-family:inherit;
+    font-weight:600;
+    cursor:pointer;
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    outline:none;
+  }
+  select.lang-select:focus{border-color:var(--accent)}
+  h1{
+    font-size:1.35rem;
+    margin:4px 0 18px;
+    text-align:center;
+    letter-spacing:-0.02em;
+  }
+  h1 span{color:var(--accent)}
+  .card{
+    background:var(--card);
+    border-radius:16px;
+    padding:14px;
+    width:100%;
+    max-width:440px;
+    margin-bottom:12px;
+    border:1px solid var(--border);
+    transition:border-color .15s, opacity .15s, background .2s;
+  }
+  .card.win{border-color:var(--win);box-shadow:0 0 0 1px var(--win)}
+  .card.lose{opacity:.65}
+  .row-label{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+    font-weight:600;
+    font-size:.95rem;
+  }
+  .row-label .tag{
+    font-size:.7rem;
+    color:var(--muted);
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+  .inputs{
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:8px;
+  }
+  input,select.unit-select{
+    background:var(--card2);
+    border:1px solid var(--border);
+    color:var(--text);
+    border-radius:10px;
+    padding:12px 10px;
+    font-size:1rem;
+    width:100%;
+    min-height:48px;
+    font-family:inherit;
+    outline:none;
+  }
+  input:focus,select.unit-select:focus{border-color:var(--accent)}
+  input::placeholder{color:var(--muted)}
+  select.unit-select{
+    padding-right:28px;
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+  }
+  .result{
+    width:100%;
+    max-width:440px;
+    margin:6px 0 16px;
+    text-align:center;
+    min-height:80px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:4px;
+  }
+  .result .per-unit{
+    font-size:.85rem;
+    color:var(--muted);
+    line-height:1.5;
+  }
+  .result .per-unit b{color:var(--text);font-weight:600}
+  .verdict{
+    font-size:1.5rem;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin-top:6px;
+  }
+  .verdict.win{color:var(--win)}
+  .verdict.neutral{color:var(--muted);font-size:1.1rem;font-weight:600}
+  .actions{
+    display:flex;
+    gap:10px;
+    width:100%;
+    max-width:440px;
+  }
+  button{
+    flex:1;
+    background:var(--card2);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    font-size:1rem;
+    font-weight:600;
+    min-height:52px;
+    font-family:inherit;
+    cursor:pointer;
+    transition:transform .08s,background .15s;
+  }
+  button:active{transform:scale(.97)}
+  button.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+  .hint{
+    color:var(--muted);
+    font-size:.75rem;
+    text-align:center;
+    margin-top:20px;
+    max-width:400px;
+    line-height:1.5;
+  }
+  .donate-wrap{
+    width:100%;
+    max-width:440px;
+    margin-top:24px;
+    display:flex;
+    justify-content:center;
+  }
+  .donate-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--donate-bg);
+    color:var(--donate-text);
+    text-decoration:none;
+    font-weight:700;
+    font-size:.95rem;
+    padding:14px 22px;
+    border-radius:14px;
+    min-height:52px;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);
+    transition:transform .08s,filter .15s;
+  }
+  .donate-btn:hover{filter:brightness(1.05)}
+  .donate-btn:active{transform:scale(.97)}
+  .donate-btn .coffee{font-size:1.15rem}
+  .toast{
+    position:fixed;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:var(--toast-bg);
+    color:var(--toast-text);
+    padding:12px 20px;
+    border-radius:24px;
+    font-weight:700;
+    font-size:.9rem;
+    transition:transform .25s ease;
+    pointer-events:none;
+    z-index:10;
+  }
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  /* SEO-only content: visually hidden, accessible to screen readers + crawlers */
+  .sr-only{
+    position:absolute;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);
+    white-space:nowrap;border:0;
+  }
+  @media (max-width:360px){
+    .inputs{grid-template-columns:1fr 1fr;}
+    .inputs select.unit-select{grid-column:1/-1}
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HIDDEN SEO CONTENT (for crawlers) ==================== -->
+<div class="sr-only" id="seoContent" aria-hidden="false">
+  <h2 id="seoH2">Price Per Unit Calculator — Which is Cheaper?</h2>
+  <p id="seoP1">Compare two products instantly and find out which is cheaper per unit. This free mobile-friendly tool supports grams, kilograms, ounces, pounds, milliliters, liters, and count units. Perfect for grocery shopping, bulk deal comparison, and everyday price checking.</p>
+  <p id="seoP2">Features: instant price-per-unit comparison, automatic unit conversion, light and dark theme, multi-language support (English, Romanian, Serbian Latin, Serbian Cyrillic), offline capability, and shareable comparison links. No signup, no tracking, no data leaves your browser.</p>
+  <h3 id="seoH3">Frequently Asked Questions</h3>
+  <dl id="seoFaq">
+    <dt>How do I calculate price per unit?</dt>
+    <dd>Divide the total price by the quantity. The product with the lower price per unit is the better deal.</dd>
+    <dt>Does this tool work offline?</dt>
+    <dd>Yes. After the first load, the entire app runs in your browser without an internet connection.</dd>
+    <dt>Which units are supported?</dt>
+    <dd>Mass: g, kg, oz, lb. Volume: ml, L. Plus a generic count unit.</dd>
+    <dt>Is my data private?</dt>
+    <dd>Yes. Everything runs locally. No data is sent to any server, no account required.</dd>
+  </dl>
+</div>
+
+<!-- ==================== UI ==================== -->
+
+<div class="topbar">
+  <select class="lang-select" id="langSelect" aria-label="Language">
+    <option value="en">English</option>
+    <option value="ro">Română</option>
+    <option value="sr-latn">Srpski (latinica)</option>
+    <option value="sr-cyrl">Српски (ћирилица)</option>
+  </select>
+  <div class="controls">
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+  </div>
+</div>
+
+<h1 id="titleEl">Which is <span>cheaper</span>?</h1>
+
+<div class="card" id="cardA">
+  <div class="row-label">
+    <span id="labelA">Product A</span>
+    <span class="tag" id="tagA"></span>
+  </div>
+  <div class="inputs">
+    <input type="text" inputmode="decimal" id="priceA" placeholder="Price" autocomplete="off" aria-label="Price of product A">
+    <input type="text" inputmode="decimal" id="sizeA" placeholder="Size" autocomplete="off" aria-label="Size of product A">
+    <select id="unitA" class="unit-select" aria-label="Unit for product A">
+      <option value="g">g</option>
+      <option value="kg">kg</option>
+      <option value="ml">ml</option>
+      <option value="l">L</option>
+      <option value="oz">oz</option>
+      <option value="lb">lb</option>
+      <option value="ct" data-i18n-opt="count">ct</option>
+    </select>
+  </div>
+</div>
+
+<div class="card" id="cardB">
+  <div class="row-label">
+    <span id="labelB">Product B</span>
+    <span class="tag" id="tagB"></span>
+  </div>
+  <div class="inputs">
+    <input type="text" inputmode="decimal" id="priceB" placeholder="Price" autocomplete="off" aria-label="Price of product B">
+    <input type="text" inputmode="decimal" id="sizeB" placeholder="Size" autocomplete="off" aria-label="Size of product B">
+    <select id="unitB" class="unit-select" aria-label="Unit for product B">
+      <option value="g">g</option>
+      <option value="kg">kg</option>
+      <option value="ml">ml</option>
+      <option value="l">L</option>
+      <option value="oz">oz</option>
+      <option value="lb">lb</option>
+      <option value="ct" data-i18n-opt="count">ct</option>
+    </select>
+  </div>
+</div>
+
+<div class="result" id="result" role="status" aria-live="polite">
+  <div class="per-unit" id="resultMsg">Enter both products above to compare.</div>
+</div>
+
+<div class="actions">
+  <button id="swapBtn">🔄 <span id="swapLabel">Swap</span></button>
+  <button id="shareBtn" class="primary">📤 <span id="shareLabel">Share</span></button>
+</div>
+
+<div class="hint" id="hintEl">
+  Tip: units within the same family convert automatically (g↔kg, ml↔L, oz↔lb).
+</div>
+
+<div class="donate-wrap">
+  <a class="donate-btn" id="donateBtn" href="https://paypal.me/TekiDeki" target="_blank" rel="noopener noreferrer">
+    <span class="coffee">☕</span>
+    <span id="donateLabel">I deserve a coffee?</span>
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Link copied!</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  // ---------- i18n ----------
+  var I18N = {
+    en: {
+      html_lang: "en",
+      page_title: "Which is Cheaper? — Instant Price Per Unit Calculator",
+      meta_desc: "Compare two products instantly and find out which is cheaper per unit. Free, fast, mobile-friendly price-per-unit calculator.",
+      title_html: 'Which is <span>cheaper</span>?',
+      productA: "Product A",
+      productB: "Product B",
+      price: "Price",
+      size: "Size",
+      swap: "Swap",
+      share: "Share",
+      hint: "Tip: units within the same family convert automatically (g\u2194kg, ml\u2194L, oz\u2194lb).",
+      donate: "I deserve a coffee?",
+      enter_both: "Enter both products above to compare.",
+      add_other: "Add the other product to compare",
+      different: "Different unit types \u2014 can't compare",
+      cheaper_tag: "cheaper",
+      verdict_a: "\ud83c\udfc6 A is {p}% cheaper",
+      verdict_b: "\ud83c\udfc6 B is {p}% cheaper",
+      verdict_same: "Same price per unit \ud83e\udd1d",
+      link_copied: "Link copied!",
+      copy_failed: "Copy failed",
+      count: "ct",
+      per: "per",
+      item: "item",
+      theme_dark: "\ud83c\udf19",
+      theme_light: "\u2600\ufe0f",
+      seo_h2: "Price Per Unit Calculator — Which is Cheaper?",
+      seo_p1: "Compare two products instantly and find out which is cheaper per unit. This free mobile-friendly tool supports grams, kilograms, ounces, pounds, milliliters, liters, and count units.",
+      seo_p2: "Features: instant price-per-unit comparison, automatic unit conversion, light and dark theme, multi-language support, offline capability, and shareable comparison links.",
+      seo_h3: "Frequently Asked Questions",
+      faq_q1: "How do I calculate price per unit?", faq_a1: "Divide the total price by the quantity. The product with the lower price per unit is the better deal.",
+      faq_q2: "Does this tool work offline?", faq_a2: "Yes. After the first load, the entire app runs in your browser without an internet connection.",
+      faq_q3: "Which units are supported?", faq_a3: "Mass: g, kg, oz, lb. Volume: ml, L. Plus a generic count unit.",
+      faq_q4: "Is my data private?", faq_a4: "Yes. Everything runs locally. No data is sent to any server, no account required."
+    },
+    ro: {
+      html_lang: "ro",
+      page_title: "Care e mai ieftin? — Calculator instant preț pe unitate",
+      meta_desc: "Compară două produse instant și află care e mai ieftin pe unitate. Calculator gratuit, rapid, optimizat pentru mobil.",
+      title_html: 'Care e <span>mai ieftin</span>?',
+      productA: "Produsul A",
+      productB: "Produsul B",
+      price: "Pre\u021b",
+      size: "Cantitate",
+      swap: "Inverseaz\u0103",
+      share: "Distribuie",
+      hint: "Sfat: unit\u0103\u021bile din aceea\u0219i familie se convertesc automat (g\u2194kg, ml\u2194L, oz\u2194lb).",
+      donate: "Merit o cafelu\u021b\u0103?",
+      enter_both: "Introdu ambele produse mai sus pentru a compara.",
+      add_other: "Adaug\u0103 al doilea produs pentru a compara",
+      different: "Tipuri de unit\u0103\u021bi diferite \u2014 nu se pot compara",
+      cheaper_tag: "mai ieftin",
+      verdict_a: "\ud83c\udfc6 A este cu {p}% mai ieftin",
+      verdict_b: "\ud83c\udfc6 B este cu {p}% mai ieftin",
+      verdict_same: "Acela\u0219i pre\u021b pe unitate \ud83e\udd1d",
+      link_copied: "Link copiat!",
+      copy_failed: "Copiere e\u0219uat\u0103",
+      count: "buc",
+      per: "pe",
+      item: "buc",
+      theme_dark: "\ud83c\udf19",
+      theme_light: "\u2600\ufe0f",
+      seo_h2: "Calculator pre\u021b pe unitate — Care e mai ieftin?",
+      seo_p1: "Compar\u0103 dou\u0103 produse instant \u0219i afl\u0103 care e mai ieftin pe unitate. Instrument gratuit, optimizat pentru mobil, suport\u0103 grame, kilograme, uncii, livre, mililitri, litri \u0219i unit\u0103\u021bi de num\u0103rare.",
+      seo_p2: "Func\u021bii: compara\u021bie instant pre\u021b-pe-unitate, conversie automat\u0103 a unit\u0103\u021bilor, tem\u0103 deschis\u0103/\u00eentunecat\u0103, suport multilingv, func\u021bionare offline \u0219i linkuri partajabile.",
+      seo_h3: "\u00centrebu\u0103ri frecvente",
+      faq_q1: "Cum calculez pre\u021bul pe unitate?", faq_a1: "\u00cempar\u021bi pre\u021bul total la cantitate. Produsul cu pre\u021bul pe unitate mai mic este oferta mai bun\u0103.",
+      faq_q2: "Func\u021bioneaz\u0103 \u0219i offline?", faq_a2: "Da. Dup\u0103 prima \u00eenc\u0103rcare, \u00eentreaga aplica\u021bie ruleaz\u0103 \u00een browser f\u0103r\u0103 conexiune la internet.",
+      faq_q3: "Ce unit\u0103\u021bi sunt acceptate?", faq_a3: "Mas\u0103: g, kg, oz, lb. Volum: ml, L. Plus o unitate generic\u0103 de num\u0103rare.",
+      faq_q4: "Datele mele sunt private?", faq_a4: "Da. Totul ruleaz\u0103 local. Nicio dat\u0103 nu este trimis\u0103 vreunui server \u0219i nu e necesar cont."
+    },
+    "sr-latn": {
+      html_lang: "sr-Latn",
+      page_title: "\u0160ta je jeftinije? — Trenutni kalkulator cene po jedinici",
+      meta_desc: "Uporedi dva proizvoda trenutno i saznaj \u0161ta je jeftinije po jedinici. Besplatan, brz kalkulator prilago\u0111en mobilnim telefonima.",
+      title_html: '\u0160ta je <span>jeftinije</span>?',
+      productA: "Proizvod A",
+      productB: "Proizvod B",
+      price: "Cena",
+      size: "Koli\u010dina",
+      swap: "Zameni",
+      share: "Podeli",
+      hint: "Savet: jedinice u istoj familiji se automatski konvertuju (g\u2194kg, ml\u2194L, oz\u2194lb).",
+      donate: "Zaslu\u017eujem kaficu?",
+      enter_both: "Unesi oba proizvoda iznad za pore\u0111enje.",
+      add_other: "Dodaj drugi proizvod za pore\u0111enje",
+      different: "Razli\u010dite jedinice \u2014 ne mo\u017ee se porediti",
+      cheaper_tag: "jeftinije",
+      verdict_a: "\ud83c\udfc6 A je {p}% jeftinije",
+      verdict_b: "\ud83c\udfc6 B je {p}% jeftinije",
+      verdict_same: "Ista cena po jedinici \ud83e\udd1d",
+      link_copied: "Link kopiran!",
+      copy_failed: "Kopiranje nije uspelo",
+      count: "kom",
+      per: "po",
+      item: "kom",
+      theme_dark: "\ud83c\udf19",
+      theme_light: "\u2600\ufe0f",
+      seo_h2: "Kalkulator cene po jedinici — \u0160ta je jeftinije?",
+      seo_p1: "Uporedi dva proizvoda trenutno i saznaj \u0161ta je jeftinije po jedinici. Besplatan alat prilago\u0111en mobilnim telefonima, podr\u017eava grame, kilograme, unce, funte, mililitre, litre i jedinice brojanja.",
+      seo_p2: "Funkcije: trenutno pore\u0111enje cene po jedinici, automatska konverzija jedinica, svetla i tamna tema, vi\u0161ejezi\u010dna podr\u0161ka, rad bez interneta i deljivi linkovi.",
+      seo_h3: "\u010cesto postavljana pitanja",
+      faq_q1: "Kako da izra\u010dunam cenu po jedinici?", faq_a1: "Podeli ukupnu cenu sa koli\u010dinom. Proizvod sa ni\u017eom cenom po jedinici je bolja ponuda.",
+      faq_q2: "Da li radi bez interneta?", faq_a2: "Da. Nakon prvog u\u010ditavanja, cela aplikacija radi u pregleda\u010du bez internet veze.",
+      faq_q3: "Koje jedinice su podr\u017eane?", faq_a3: "Masa: g, kg, oz, lb. Zapremina: ml, L. Plus generi\u010dka jedinica za brojanje.",
+      faq_q4: "Da li su moji podaci privatni?", faq_a4: "Da. Sve radi lokalno. Nikakvi podaci se ne \u0161alju serveru i nalog nije potreban."
+    },
+    "sr-cyrl": {
+      html_lang: "sr-Cyrl",
+      page_title: "\u0428\u0442\u0430 \u0458\u0435 \u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435? — \u0422\u0440\u0435\u043d\u0443\u0442\u043d\u0438 \u043a\u0430\u043b\u043a\u0443\u043b\u0430\u0442\u043e\u0440 \u0446\u0435\u043d\u0435 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438",
+      meta_desc: "\u0423\u043f\u043e\u0440\u0435\u0434\u0438 \u0434\u0432\u0430 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0430 \u0442\u0440\u0435\u043d\u0443\u0442\u043d\u043e \u0438 \u0441\u0430\u0437\u043d\u0430\u0458 \u0448\u0442\u0430 \u0458\u0435 \u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438. \u0411\u0435\u0441\u043f\u043b\u0430\u0442\u0430\u043d, \u0431\u0440\u0437 \u043a\u0430\u043b\u043a\u0443\u043b\u0430\u0442\u043e\u0440 \u0437\u0430 \u043c\u043e\u0431\u0438\u043b\u043d\u0435.",
+      title_html: '\u0428\u0442\u0430 \u0458\u0435 <span>\u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435</span>?',
+      productA: "\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434 \u0410",
+      productB: "\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434 \u0411",
+      price: "\u0426\u0435\u043d\u0430",
+      size: "\u041a\u043e\u043b\u0438\u0447\u0438\u043d\u0430",
+      swap: "\u0417\u0430\u043c\u0435\u043d\u0438",
+      share: "\u041f\u043e\u0434\u0435\u043b\u0438",
+      hint: "\u0421\u0430\u0432\u0435\u0442: \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0435 \u0443 \u0438\u0441\u0442\u043e\u0458 \u0444\u0430\u043c\u0438\u043b\u0438\u0458\u0438 \u0441\u0435 \u0430\u0443\u0442\u043e\u043c\u0430\u0442\u0441\u043a\u0438 \u043a\u043e\u043d\u0432\u0435\u0440\u0442\u0443\u0458\u0443 (g\u2194kg, ml\u2194L, oz\u2194lb).",
+      donate: "\u0417\u0430\u0441\u043b\u0443\u0436\u0443\u0458\u0435\u043c \u043a\u0430\u0444\u0438\u0446\u0443?",
+      enter_both: "\u0423\u043d\u0435\u0441\u0438 \u043e\u0431\u0430 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0430 \u0438\u0437\u043d\u0430\u0434 \u0437\u0430 \u043f\u043e\u0440\u0435\u0452\u0435\u045a\u0435.",
+      add_other: "\u0414\u043e\u0434\u0430\u0458 \u0434\u0440\u0443\u0433\u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434 \u0437\u0430 \u043f\u043e\u0440\u0435\u0452\u0435\u045a\u0435",
+      different: "\u0420\u0430\u0437\u043b\u0438\u0447\u0438\u0442\u0435 \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0435 \u2014 \u043d\u0435 \u043c\u043e\u0436\u0435 \u0441\u0435 \u043f\u043e\u0440\u0435\u0434\u0438\u0442\u0438",
+      cheaper_tag: "\u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435",
+      verdict_a: "\ud83c\udfc6 \u0410 \u0458\u0435 {p}% \u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435",
+      verdict_b: "\ud83c\udfc6 \u0411 \u0458\u0435 {p}% \u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435",
+      verdict_same: "\u0418\u0441\u0442\u0430 \u0446\u0435\u043d\u0430 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438 \ud83e\udd1d",
+      link_copied: "\u041b\u0438\u043d\u043a \u043a\u043e\u043f\u0438\u0440\u0430\u043d!",
+      copy_failed: "\u041a\u043e\u043f\u0438\u0440\u0430\u045a\u0435 \u043d\u0438\u0458\u0435 \u0443\u0441\u043f\u0435\u043b\u043e",
+      count: "\u043a\u043e\u043c",
+      per: "\u043f\u043e",
+      item: "\u043a\u043e\u043c",
+      theme_dark: "\ud83c\udf19",
+      theme_light: "\u2600\ufe0f",
+      seo_h2: "\u041a\u0430\u043b\u043a\u0443\u043b\u0430\u0442\u043e\u0440 \u0446\u0435\u043d\u0435 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438 — \u0428\u0442\u0430 \u0458\u0435 \u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435?",
+      seo_p1: "\u0423\u043f\u043e\u0440\u0435\u0434\u0438 \u0434\u0432\u0430 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0430 \u0442\u0440\u0435\u043d\u0443\u0442\u043d\u043e \u0438 \u0441\u0430\u0437\u043d\u0430\u0458 \u0448\u0442\u0430 \u0458\u0435 \u0458\u0435\u0444\u0442\u0438\u043d\u0438\u0458\u0435 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438. \u0411\u0435\u0441\u043f\u043b\u0430\u0442\u0430\u043d \u0430\u043b\u0430\u0442 \u0437\u0430 \u043c\u043e\u0431\u0438\u043b\u043d\u0435, \u043f\u043e\u0434\u0440\u0436\u0430\u0432\u0430 \u0433\u0440\u0430\u043c\u0435, \u043a\u0438\u043b\u043e\u0433\u0440\u0430\u043c\u0435, \u0443\u043d\u0446\u0435, \u0444\u0443\u043d\u0442\u0435, \u043c\u0438\u043b\u0438\u043b\u0438\u0442\u0440\u0435, \u043b\u0438\u0442\u0440\u0435 \u0438 \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0435 \u0431\u0440\u043e\u0458\u0430\u045a\u0430.",
+      seo_p2: "\u0424\u0443\u043d\u043a\u0446\u0438\u0458\u0435: \u0442\u0440\u0435\u043d\u0443\u0442\u043d\u043e \u043f\u043e\u0440\u0435\u0452\u0435\u045a\u0435 \u0446\u0435\u043d\u0435 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438, \u0430\u0443\u0442\u043e\u043c\u0430\u0442\u0441\u043a\u0430 \u043a\u043e\u043d\u0432\u0435\u0440\u0437\u0438\u0458\u0430 \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0430, \u0441\u0432\u0435\u0442\u043b\u0430 \u0438 \u0442\u0430\u043c\u043d\u0430 \u0442\u0435\u043c\u0430, \u0432\u0438\u0448\u0435\u0458\u0435\u0437\u0438\u0447\u043d\u0430 \u043f\u043e\u0434\u0440\u0448\u043a\u0430, \u0440\u0430\u0434 \u0431\u0435\u0437 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0430 \u0438 \u0434\u0435\u0459\u0438\u0432\u0438 \u043b\u0438\u043d\u043a\u043e\u0432\u0438.",
+      seo_h3: "\u0427\u0435\u0441\u0442\u043e \u043f\u043e\u0441\u0442\u0430\u0432\u0459\u0430\u043d\u0430 \u043f\u0438\u0442\u0430\u045a\u0430",
+      faq_q1: "\u041a\u0430\u043a\u043e \u0434\u0430 \u0438\u0437\u0440\u0430\u0447\u0443\u043d\u0430\u043c \u0446\u0435\u043d\u0443 \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438?", faq_a1: "\u041f\u043e\u0434\u0435\u043b\u0438 \u0443\u043a\u0443\u043f\u043d\u0443 \u0446\u0435\u043d\u0443 \u0441\u0430 \u043a\u043e\u043b\u0438\u0447\u0438\u043d\u043e\u043c. \u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434 \u0441\u0430 \u043d\u0438\u0436\u043e\u043c \u0446\u0435\u043d\u043e\u043c \u043f\u043e \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0438 \u0458\u0435 \u0431\u043e\u0459\u0430 \u043f\u043e\u043d\u0443\u0434\u0430.",
+      faq_q2: "\u0414\u0430 \u043b\u0438 \u0440\u0430\u0434\u0438 \u0431\u0435\u0437 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0430?", faq_a2: "\u0414\u0430. \u041d\u0430\u043a\u043e\u043d \u043f\u0440\u0432\u043e\u0433 \u0443\u0447\u0438\u0442\u0430\u0432\u0430\u045a\u0430, \u0446\u0435\u043b\u0430 \u0430\u043f\u043b\u0438\u043a\u0430\u0446\u0438\u0458\u0430 \u0440\u0430\u0434\u0438 \u0443 \u043f\u0440\u0435\u0433\u043b\u0435\u0434\u0430\u0447\u0443 \u0431\u0435\u0437 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u0432\u0435\u0437\u0435.",
+      faq_q3: "\u041a\u043e\u0458\u0435 \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0435 \u0441\u0443 \u043f\u043e\u0434\u0440\u0436\u0430\u043d\u0435?", faq_a3: "\u041c\u0430\u0441\u0430: g, kg, oz, lb. \u0417\u0430\u043f\u0440\u0435\u043c\u0438\u043d\u0430: ml, L. \u041f\u043b\u0443\u0441 \u0433\u0435\u043d\u0435\u0440\u0438\u0447\u043a\u0430 \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0430 \u0437\u0430 \u0431\u0440\u043e\u0458\u0430\u045a\u0435.",
+      faq_q4: "\u0414\u0430 \u043b\u0438 \u0441\u0443 \u043c\u043e\u0458\u0438 \u043f\u043e\u0434\u0430\u0446\u0438 \u043f\u0440\u0438\u0432\u0430\u0442\u043d\u0438?", faq_a4: "\u0414\u0430. \u0421\u0432\u0435 \u0440\u0430\u0434\u0438 \u043b\u043e\u043a\u0430\u043b\u043d\u043e. \u041d\u0438\u043a\u0430\u043a\u0432\u0438 \u043f\u043e\u0434\u0430\u0446\u0438 \u0441\u0435 \u043d\u0435 \u0448\u0430\u0459\u0443 \u0441\u0435\u0440\u0432\u0435\u0440\u0443 \u0438 \u043d\u0430\u043b\u043e\u0433 \u043d\u0438\u0458\u0435 \u043f\u043e\u0442\u0440\u0435\u0431\u0430\u043d."
+    }
+  };
+
+  var currentLang = "en";
+
+  function t(key){
+    var pack = I18N[currentLang] || I18N.en;
+    return pack[key] != null ? pack[key] : (I18N.en[key] != null ? I18N.en[key] : key);
+  }
+
+  function tf(key, vars){
+    var s = t(key);
+    if(vars){
+      Object.keys(vars).forEach(function(k){
+        s = s.replace(new RegExp("\\{" + k + "\\}", "g"), vars[k]);
+      });
+    }
+    return s;
+  }
+
+  // ---------- Dynamic SEO updates on language change ----------
+  function updateSEO(){
+    document.documentElement.lang = t("html_lang");
+    document.title = t("page_title");
+
+    var md = document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute("content", t("meta_desc"));
+
+    var ogT = document.querySelector('meta[property="og:title"]');
+    if(ogT) ogT.setAttribute("content", t("page_title"));
+    var ogD = document.querySelector('meta[property="og:description"]');
+    if(ogD) ogD.setAttribute("content", t("meta_desc"));
+    var ogL = document.querySelector('meta[property="og:locale"]');
+    if(ogL){
+      var localeMap = { en:"en_US", ro:"ro_RO", "sr-latn":"sr_RS", "sr-cyrl":"sr_RS" };
+      ogL.setAttribute("content", localeMap[currentLang] || "en_US");
+    }
+
+    var twT = document.querySelector('meta[name="twitter:title"]');
+    if(twT) twT.setAttribute("content", t("page_title"));
+    var twD = document.querySelector('meta[name="twitter:description"]');
+    if(twD) twD.setAttribute("content", t("meta_desc"));
+
+    // Hidden SEO content
+    var sh2 = $("seoH2"); if(sh2) sh2.textContent = t("seo_h2");
+    var sp1 = $("seoP1"); if(sp1) sp1.textContent = t("seo_p1");
+    var sp2 = $("seoP2"); if(sp2) sp2.textContent = t("seo_p2");
+    var sh3 = $("seoH3"); if(sh3) sh3.textContent = t("seo_h3");
+    var dts = document.querySelectorAll("#seoFaq dt");
+    var dds = document.querySelectorAll("#seoFaq dd");
+    if(dts.length >= 4){
+      dts[0].textContent = t("faq_q1"); dds[0].textContent = t("faq_a1");
+      dts[1].textContent = t("faq_q2"); dds[1].textContent = t("faq_a2");
+      dts[2].textContent = t("faq_q3"); dds[2].textContent = t("faq_a3");
+      dts[3].textContent = t("faq_q4"); dds[3].textContent = t("faq_a4");
+    }
+  }
+
+  function applyTranslations(){
+    updateSEO();
+    $("titleEl").innerHTML = t("title_html");
+    $("labelA").textContent = t("productA");
+    $("labelB").textContent = t("productB");
+    $("priceA").placeholder = t("price");
+    $("priceB").placeholder = t("price");
+    $("sizeA").placeholder = t("size");
+    $("sizeB").placeholder = t("size");
+    $("swapLabel").textContent = t("swap");
+    $("shareLabel").textContent = t("share");
+    $("hintEl").textContent = t("hint");
+    $("donateLabel").textContent = t("donate");
+    var opts = document.querySelectorAll('[data-i18n-opt="count"]');
+    for(var i=0;i<opts.length;i++){ opts[i].textContent = t("count"); }
+    updateThemeButton();
+    render();
+  }
+
+  // ---------- Theme ----------
+  function setTheme(theme){
+    document.documentElement.setAttribute("data-theme", theme);
+    try { localStorage.setItem("theme", theme); } catch(e){}
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+    for(var i=0;i<metas.length;i++){
+      var media = metas[i].getAttribute("media") || "";
+      if(media.indexOf("dark") >= 0){
+        metas[i].setAttribute("content", theme === "dark" ? "#0f172a" : "#0f172a");
+      }
+    }
+    updateThemeButton();
+  }
+
+  function updateThemeButton(){
+    var theme = document.documentElement.getAttribute("data-theme") || "dark";
+    var btn = $("themeBtn");
+    btn.textContent = theme === "light" ? t("theme_light") : t("theme_dark");
+    btn.setAttribute("aria-label", theme === "light" ? "Switch to dark" : "Switch to light");
+  }
+
+  function initTheme(){
+    var saved = null;
+    try { saved = localStorage.getItem("theme"); } catch(e){}
+    if(!saved){
+      saved = (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches)
+        ? "light" : "dark";
+    }
+    setTheme(saved);
+  }
+
+  // ---------- Elements ----------
+  var priceA = $("priceA"), sizeA = $("sizeA"), unitA = $("unitA");
+  var priceB = $("priceB"), sizeB = $("sizeB"), unitB = $("unitB");
+  var cardA  = $("cardA"),  cardB  = $("cardB");
+  var tagA   = $("tagA"),   tagB   = $("tagB");
+  var result = $("result");
+
+  var CONV = {
+    g:  { family:"mass", factor:1 },
+    kg: { family:"mass", factor:1000 },
+    oz: { family:"mass", factor:28.3495 },
+    lb: { family:"mass", factor:453.592 },
+    ml: { family:"vol",  factor:1 },
+    l:  { family:"vol",  factor:1000 },
+    ct: { family:"count", factor:1 }
+  };
+
+  function parseNum(v){
+    if(v == null) return NaN;
+    var s = String(v).trim().replace(",", ".");
+    if(s === "") return NaN;
+    var n = parseFloat(s);
+    return isFinite(n) ? n : NaN;
+  }
+
+  function normalize(amount, unit){
+    var u = CONV[unit];
+    if(!u || !isFinite(amount)) return null;
+    return { family:u.family, base: amount * u.factor };
+  }
+
+  function displayUnit(amount, unit){
+    var u = CONV[unit];
+    if(!u) return unit;
+    if(u.family === "mass"){
+      if(unit === "kg" || unit === "lb") return "kg";
+      return "100g";
+    }
+    if(u.family === "vol"){
+      if(unit === "l") return "L";
+      return "100ml";
+    }
+    return t("item");
+  }
+
+  function amountInDisplayUnit(amount, unit, dispUnit){
+    var u = CONV[unit];
+    if(!u) return amount;
+    var basePerDisplay;
+    if(dispUnit === "100g")      basePerDisplay = 100;
+    else if(dispUnit === "100ml") basePerDisplay = 100;
+    else if(dispUnit === "kg")    basePerDisplay = 1000;
+    else if(dispUnit === "L")     basePerDisplay = 1000;
+    else                          basePerDisplay = 1;
+    var totalBase = amount * u.factor;
+    return totalBase / basePerDisplay;
+  }
+
+  function fmtPrice(n){
+    if(!isFinite(n)) return "\u2014";
+    if(n < 0.01) return n.toFixed(4);
+    if(n < 1)    return n.toFixed(3);
+    return n.toFixed(2);
+  }
+
+  function fmtPct(n){ return String(Math.round(n)); }
+
+  function computeOne(priceStr, sizeStr, unit){
+    var price = parseNum(priceStr);
+    var size  = parseNum(sizeStr);
+    if(!isFinite(price) || !isFinite(size) || size <= 0 || price < 0) return null;
+    var norm = normalize(size, unit);
+    if(!norm) return null;
+    var disp = displayUnit(size, unit);
+    var qty  = amountInDisplayUnit(size, unit, disp);
+    var ppu  = price / qty;
+    return {
+      price: price, size: size, unit: unit,
+      family: norm.family, base: norm.base,
+      dispUnit: disp, perDisplay: ppu
+    };
+  }
+
+  function clearCards(){
+    cardA.classList.remove("win","lose");
+    cardB.classList.remove("win","lose");
+    tagA.textContent = "";
+    tagB.textContent = "";
+  }
+
+  function render(){
+    var a = computeOne(priceA.value, sizeA.value, unitA.value);
+    var b = computeOne(priceB.value, sizeB.value, unitB.value);
+
+    clearCards();
+
+    if(!a && !b){
+      result.innerHTML = '<div class="per-unit">' + t("enter_both") + '</div>';
+      return;
+    }
+    if(!a || !b){
+      var one = a || b;
+      var label = a ? t("productA") : t("productB");
+      result.innerHTML =
+        '<div class="per-unit"><b>' + label + ':</b> ' +
+        fmtPrice(one.perDisplay) + ' ' + t("per") + ' ' + one.dispUnit + '</div>' +
+        '<div class="verdict neutral">' + t("add_other") + '</div>';
+      return;
+    }
+
+    if(a.family !== b.family){
+      result.innerHTML =
+        '<div class="per-unit"><b>A:</b> ' + fmtPrice(a.perDisplay) + ' ' + t("per") + ' ' + a.dispUnit +
+        ' &nbsp;\u00b7&nbsp; <b>B:</b> ' + fmtPrice(b.perDisplay) + ' ' + t("per") + ' ' + b.dispUnit + '</div>' +
+        '<div class="verdict neutral">' + t("different") + '</div>';
+      return;
+    }
+
+    var commonDisp;
+    if(a.family === "mass"){
+      commonDisp = (a.dispUnit === "kg" || b.dispUnit === "kg") ? "kg" : "100g";
+    } else if(a.family === "vol"){
+      commonDisp = (a.dispUnit === "L" || b.dispUnit === "L") ? "L" : "100ml";
+    } else {
+      commonDisp = t("item");
+    }
+
+    function ppuIn(prod){
+      var u = CONV[prod.unit];
+      var basePerDisplay;
+      if(commonDisp === "100g" || commonDisp === "100ml") basePerDisplay = 100;
+      else if(commonDisp === "kg" || commonDisp === "L")  basePerDisplay = 1000;
+      else                                                basePerDisplay = 1;
+      var totalBase = prod.size * u.factor;
+      var qty = totalBase / basePerDisplay;
+      return prod.price / qty;
+    }
+
+    var ppuA = ppuIn(a);
+    var ppuB = ppuIn(b);
+
+    if(ppuA < ppuB){
+      cardA.classList.add("win");
+      cardB.classList.add("lose");
+      tagA.textContent = t("cheaper_tag");
+      var save = ((ppuB - ppuA) / ppuB) * 100;
+      result.innerHTML =
+        '<div class="per-unit"><b>A:</b> ' + fmtPrice(ppuA) + ' / ' + commonDisp +
+        ' &nbsp;\u00b7&nbsp; <b>B:</b> ' + fmtPrice(ppuB) + ' / ' + commonDisp + '</div>' +
+        '<div class="verdict win">' + tf("verdict_a", {p: fmtPct(save)}) + '</div>';
+    } else if(ppuB < ppuA){
+      cardB.classList.add("win");
+      cardA.classList.add("lose");
+      tagB.textContent = t("cheaper_tag");
+      var save2 = ((ppuA - ppuB) / ppuA) * 100;
+      result.innerHTML =
+        '<div class="per-unit"><b>A:</b> ' + fmtPrice(ppuA) + ' / ' + commonDisp +
+        ' &nbsp;\u00b7&nbsp; <b>B:</b> ' + fmtPrice(ppuB) + ' / ' + commonDisp + '</div>' +
+        '<div class="verdict win">' + tf("verdict_b", {p: fmtPct(save2)}) + '</div>';
+    } else {
+      result.innerHTML =
+        '<div class="per-unit"><b>A:</b> ' + fmtPrice(ppuA) + ' / ' + commonDisp +
+        ' &nbsp;\u00b7&nbsp; <b>B:</b> ' + fmtPrice(ppuB) + ' / ' + commonDisp + '</div>' +
+        '<div class="verdict neutral">' + t("verdict_same") + '</div>';
+    }
+  }
+
+  function swap(){
+    var p = priceA.value; priceA.value = priceB.value; priceB.value = p;
+    var s = sizeA.value;  sizeA.value  = sizeB.value;  sizeB.value  = s;
+    var u = unitA.value;  unitA.value  = unitB.value;  unitB.value  = u;
+    render();
+  }
+
+  function encodeState(){
+    var parts = [
+      priceA.value, sizeA.value, unitA.value,
+      priceB.value, sizeB.value, unitB.value,
+      currentLang
+    ].map(function(x){ return encodeURIComponent(x == null ? "" : x); });
+    return parts.join("~");
+  }
+
+  function decodeState(hash){
+    if(!hash) return;
+    var parts = hash.split("~");
+    if(parts.length < 6) return;
+    var vals = parts.map(function(x){ return decodeURIComponent(x); });
+    priceA.value = vals[0]; sizeA.value = vals[1]; unitA.value = vals[2] || "g";
+    priceB.value = vals[3]; sizeB.value = vals[4]; unitB.value = vals[5] || "g";
+    if(vals[6] && I18N[vals[6]]){
+      currentLang = vals[6];
+      $("langSelect").value = currentLang;
+    }
+    [ [unitA, vals[2]], [unitB, vals[5]] ].forEach(function(pair){
+      var sel = pair[0], v = pair[1];
+      if(!v) return;
+      var found = false;
+      for(var i=0;i<sel.options.length;i++){
+        if(sel.options[i].value === v){ found = true; break; }
+      }
+      if(!found){
+        var opt = document.createElement("option");
+        opt.value = v; opt.textContent = v;
+        sel.appendChild(opt);
+      }
+      sel.value = v;
+    });
+  }
+
+  function updateHash(){
+    var s = encodeState();
+    if(history.replaceState){
+      history.replaceState(null, "", "#" + s);
+    } else {
+      location.hash = s;
+    }
+  }
+
+  function share(){
+    updateHash();
+    var url = location.href;
+    var title = t("page_title");
+    if(navigator.share){
+      navigator.share({ title: title, url: url }).catch(function(){});
+      return;
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        showToast(t("link_copied"));
+      }).catch(function(){ fallbackCopy(url); });
+    } else {
+      fallbackCopy(url);
+    }
+  }
+
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); showToast(t("link_copied")); }
+    catch(e){ showToast(t("copy_failed")); }
+    document.body.removeChild(ta);
+  }
+
+  var toastTimer;
+  function showToast(msg){
+    var el = $("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 1800);
+  }
+
+  // ---------- Wire events ----------
+  var inputs = [priceA, sizeA, unitA, priceB, sizeB, unitB];
+  inputs.forEach(function(el){
+    el.addEventListener("input", function(){ render(); updateHash(); });
+    el.addEventListener("change", function(){ render(); updateHash(); });
+  });
+
+  $("swapBtn").addEventListener("click", function(){ swap(); updateHash(); });
+  $("shareBtn").addEventListener("click", share);
+
+  $("themeBtn").addEventListener("click", function(){
+    var theme = document.documentElement.getAttribute("data-theme") || "dark";
+    setTheme(theme === "light" ? "dark" : "light");
+  });
+
+  $("langSelect").addEventListener("change", function(e){
+    var v = e.target.value;
+    if(I18N[v]){
+      currentLang = v;
+      try { localStorage.setItem("lang", currentLang); } catch(err){}
+      applyTranslations();
+      updateHash();
+    }
+  });
+
+  inputs.forEach(function(el, i){
+    el.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        var next = inputs[i+1];
+        if(next) next.focus();
+        else el.blur();
+      }
+    });
+  });
+
+  // ---------- Init ----------
+  var urlLang = null;
+  if(location.hash && location.hash.length > 1){
+    var testParts = location.hash.slice(1).split("~");
+    if(testParts.length >= 7){
+      var cand = decodeURIComponent(testParts[6]);
+      if(I18N[cand]) urlLang = cand;
+    }
+  }
+  if(urlLang){
+    currentLang = urlLang;
+  } else {
+    var stored = null;
+    try { stored = localStorage.getItem("lang"); } catch(e){}
+    if(stored && I18N[stored]){
+      currentLang = stored;
+    } else {
+      var nav = (navigator.language || "en").toLowerCase();
+      if(nav.indexOf("ro") === 0) currentLang = "ro";
+      else if(nav.indexOf("sr") === 0){
+        currentLang = (nav.indexOf("cyrl") >= 0 || nav.indexOf("-ba") >= 0) ? "sr-cyrl" : "sr-latn";
+      } else currentLang = "en";
+    }
+  }
+  $("langSelect").value = currentLang;
+
+  initTheme();
+
+  if(location.hash && location.hash.length > 1){
+    decodeState(location.hash.slice(1));
+  } else {
+    priceA.value = "4.99"; sizeA.value = "500"; unitA.value = "g";
+    priceB.value = "6.49"; sizeB.value = "750"; unitB.value = "g";
+  }
+
+  applyTranslations();
+  updateHash();
+  render();
+
+})();
+</script>
+<script>
+  // Register Service Worker for offline + installability
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("./sw.js", { scope: "./" })
+        .then(function (reg) {
+          console.log("SW registered:", reg.scope);
+        })
+        .catch(function (err) {
+          console.warn("SW registration failed:", err);
+        });
+    });
+  }
+</script>
+</body>
+</html>
