@@ -172,6 +172,8 @@
     --toast-text:#04140a;
     --donate-bg:#facc15;
     --donate-text:#1a1500;
+    --reset-bg:#f97316;
+    --reset-text:#1a0a00;
   }
   html[data-theme="light"]{
     --bg:#f1f5f9;
@@ -188,6 +190,8 @@
     --toast-text:#ffffff;
     --donate-bg:#eab308;
     --donate-text:#1a1500;
+    --reset-bg:#ea580c;
+    --reset-text:#ffffff;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;padding:0;min-height:100%}
@@ -339,7 +343,7 @@
   .verdict.neutral{color:var(--muted);font-size:1.1rem;font-weight:600}
   .actions{
     display:flex;
-    gap:10px;
+    gap:8px;
     width:100%;
     max-width:440px;
   }
@@ -349,16 +353,23 @@
     color:var(--text);
     border:1px solid var(--border);
     border-radius:12px;
-    padding:14px;
-    font-size:1rem;
+    padding:14px 8px;
+    font-size:.95rem;
     font-weight:600;
     min-height:52px;
     font-family:inherit;
     cursor:pointer;
     transition:transform .08s,background .15s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    white-space:nowrap;
   }
   button:active{transform:scale(.97)}
   button.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+  button.reset-btn{background:var(--reset-bg);color:var(--reset-text);border-color:var(--reset-bg)}
+  button.reset-btn:hover{filter:brightness(1.05)}
   .hint{
     color:var(--muted);
     font-size:.75rem;
@@ -420,6 +431,7 @@
   @media (max-width:360px){
     .inputs{grid-template-columns:1fr 1fr;}
     .inputs select.unit-select{grid-column:1/-1}
+    button{font-size:.85rem;padding:12px 4px;gap:4px}
   }
 </style>
 </head>
@@ -504,8 +516,9 @@
 </div>
 
 <div class="actions">
-  <button id="swapBtn">🔄 <span id="swapLabel">Swap</span></button>
-  <button id="shareBtn" class="primary">📤 <span id="shareLabel">Share</span></button>
+  <button id="swapBtn" aria-label="Swap products">🔄 <span id="swapLabel">Swap</span></button>
+  <button id="resetBtn" class="reset-btn" aria-label="Reset all fields">🗑️ <span id="resetLabel">Reset</span></button>
+  <button id="shareBtn" class="primary" aria-label="Share comparison">📤 <span id="shareLabel">Share</span></button>
 </div>
 
 <div class="hint" id="hintEl">
@@ -539,6 +552,7 @@
       price: "Price",
       size: "Size",
       swap: "Swap",
+      reset: "Reset",
       share: "Share",
       hint: "Tip: units within the same family convert automatically (g\u2194kg, ml\u2194L, oz\u2194lb).",
       donate: "I deserve a coffee?",
@@ -575,6 +589,7 @@
       price: "Pre\u021b",
       size: "Cantitate",
       swap: "Inverseaz\u0103",
+      reset: "Reseteaz\u0103",
       share: "Distribuie",
       hint: "Sfat: unit\u0103\u021bile din aceea\u0219i familie se convertesc automat (g\u2194kg, ml\u2194L, oz\u2194lb).",
       donate: "Merit o cafelu\u021b\u0103?",
@@ -611,6 +626,7 @@
       price: "Cena",
       size: "Koli\u010dina",
       swap: "Zameni",
+      reset: "Resetuj",
       share: "Podeli",
       hint: "Savet: jedinice u istoj familiji se automatski konvertuju (g\u2194kg, ml\u2194L, oz\u2194lb).",
       donate: "Zaslu\u017eujem kaficu?",
@@ -647,6 +663,7 @@
       price: "\u0426\u0435\u043d\u0430",
       size: "\u041a\u043e\u043b\u0438\u0447\u0438\u043d\u0430",
       swap: "\u0417\u0430\u043c\u0435\u043d\u0438",
+      reset: "\u0420\u0435\u0441\u0435\u0442\u0443\u0458",
       share: "\u041f\u043e\u0434\u0435\u043b\u0438",
       hint: "\u0421\u0430\u0432\u0435\u0442: \u0458\u0435\u0434\u0438\u043d\u0438\u0446\u0435 \u0443 \u0438\u0441\u0442\u043e\u0458 \u0444\u0430\u043c\u0438\u043b\u0438\u0458\u0438 \u0441\u0435 \u0430\u0443\u0442\u043e\u043c\u0430\u0442\u0441\u043a\u0438 \u043a\u043e\u043d\u0432\u0435\u0440\u0442\u0443\u0458\u0443 (g\u2194kg, ml\u2194L, oz\u2194lb).",
       donate: "\u0417\u0430\u0441\u043b\u0443\u0436\u0443\u0458\u0435\u043c \u043a\u0430\u0444\u0438\u0446\u0443?",
@@ -740,6 +757,7 @@
     $("sizeA").placeholder = t("size");
     $("sizeB").placeholder = t("size");
     $("swapLabel").textContent = t("swap");
+    $("resetLabel").textContent = t("reset");
     $("shareLabel").textContent = t("share");
     $("hintEl").textContent = t("hint");
     $("donateLabel").textContent = t("donate");
@@ -954,6 +972,19 @@
     render();
   }
 
+  function resetAll(){
+    priceA.value = "";
+    sizeA.value  = "";
+    priceB.value = "";
+    sizeB.value  = "";
+    unitA.value  = "g";
+    unitB.value  = "g";
+    clearCards();
+    render();
+    updateHash();
+    try { priceA.focus(); } catch(e){}
+  }
+
   function encodeState(){
     var parts = [
       priceA.value, sizeA.value, unitA.value,
@@ -1045,6 +1076,7 @@
   });
 
   $("swapBtn").addEventListener("click", function(){ swap(); updateHash(); });
+  $("resetBtn").addEventListener("click", resetAll);
   $("shareBtn").addEventListener("click", share);
 
   $("themeBtn").addEventListener("click", function(){
