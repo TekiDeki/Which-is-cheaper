@@ -1,11 +1,14 @@
 /* Service Worker — Which is Cheaper?
    Cache-first strategy for app shell, so the app works fully offline. */
 
-const CACHE_NAME = "cheaper-v1";
+const CACHE_NAME = "cheaper-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./favicon.ico",
+  "./icon-maskable-512.png",
+  "./apple-touch-icon.png",
   "./icon-192.png",
   "./icon-512.png"
 ];
