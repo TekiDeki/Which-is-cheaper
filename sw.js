@@ -1,10 +1,11 @@
 /* Service Worker — Which is Cheaper?
    Cache-first strategy for app shell, so the app works fully offline. */
 
-const CACHE_NAME = "cheaper-v2";
+const CACHE_NAME = "cheaper-v3";
 const ASSETS = [
   "./",
   "./index.html",
+  "./LICENSE",
   "./manifest.json",
   "./favicon.ico",
   "./icon-maskable-512.png",
@@ -28,7 +29,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
-        keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
+        keys.filter((k) => k.startsWith('cheaper-v') && k !== CACHE_NAME).map((k) => caches.delete(k))
       )
     ).then(() => self.clients.claim())
   );
@@ -36,6 +37,11 @@ self.addEventListener("activate", (event) => {
 
 /* Fetch: cache-first, network fallback, offline fallback */
 self.addEventListener("fetch", (event) => {
+  const licenseUrl = new URL('./LICENSE', self.registration.scope).href;
+  if (event.request.method === 'GET' && event.request.url === licenseUrl) {
+    event.respondWith(caches.open(CACHE_NAME).then(cache => cache.match(event.request)).then(cached => cached || fetch(event.request)));
+    return;
+  }
   const req = event.request;
 
   // Only handle GET requests

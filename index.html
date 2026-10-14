@@ -435,6 +435,18 @@
     .inputs select.unit-select{grid-column:1/-1}
     button{font-size:.85rem;padding:12px 4px;gap:4px}
   }
+
+/* TekiDeki credits — shared footer, 2026-10-14. */
+.tekideki-credits {
+  display:flex; justify-content:center; align-items:center; flex-wrap:wrap;
+  gap:0 6px; padding:16px 12px; margin:0; width:100%;
+  font-family:inherit; font-size:12px; font-weight:400; line-height:1.8;
+  text-align:center; color:var(--text, var(--text-color, #1e293b));
+}
+.tekideki-credits a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+.tekideki-credits a:hover { text-decoration-thickness:2px; }
+.tekideki-credits a:focus-visible { outline:2px solid currentColor; outline-offset:4px; border-radius:2px; }
+
 </style>
 </head>
 <body>
@@ -533,6 +545,8 @@
     <span id="donateLabel">I deserve a coffee?</span>
   </a>
 </div>
+
+<footer class="tekideki-credits" id="tekideki-credits"><span>© 2026 <a href="https://github.com/TekiDeki" target="_blank" rel="noopener noreferrer">TekiDeki</a></span><span aria-hidden="true">·</span><a id="tekideki-source" href="https://github.com/TekiDeki/Which-is-cheaper" target="_blank" rel="noopener noreferrer">Source code</a><span aria-hidden="true">·</span><a href="https://tekideki.github.io/Which-is-cheaper/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0</a></footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite">Link copied!</div>
 
@@ -1161,6 +1175,22 @@
         });
     });
   }
+</script>
+
+<script>
+/* Keep credits in sync with the application's existing language selector. */
+(function () {
+  'use strict';
+  const labels = { en:'Source code', ro:'Cod sursă', 'sr-latn':'Izvorni kod', 'sr-cyrl':'Изворни код' };
+  function updateCreditsLanguage() {
+    const lang = (document.documentElement.lang || 'en').toLowerCase();
+    const key = lang.startsWith('sr') ? (lang.includes('cyrl') ? 'sr-cyrl' : 'sr-latn') : lang.split('-')[0];
+    const link = document.getElementById('tekideki-source');
+    if (link) link.textContent = labels[key] || labels.en;
+  }
+  updateCreditsLanguage();
+  new MutationObserver(updateCreditsLanguage).observe(document.documentElement, { attributes:true, attributeFilter:['lang'] });
+})();
 </script>
 </body>
 </html>
