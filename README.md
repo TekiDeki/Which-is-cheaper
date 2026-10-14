@@ -15,7 +15,7 @@ price per unit and highlights the winner in big green text. That's it.
 - 🏆 **Clear verdict** - "A is 12% cheaper" with big visual winner/loser highlighting
 - 🌗 **Light & dark theme** - respects your system preference, remembers your choice
 - 🌍 **4 languages** - English, Română, Srpski (latinica), Српски (ћирилица)
-- 🔗 **Shareable links** - every comparison is encoded in the URL
+- 🔗 **Shareable links** - the address stays clean; comparison links are created only when you press Share
 - 📱 **Mobile-first** - 48px touch targets, numeric keypad, no zoom jank
 - 📦 **Works offline** - full PWA with service worker caching
 - 🪶 **Zero dependencies** - no frameworks, no build step, no tracking
@@ -89,3 +89,8 @@ No external CDNs. No analytics. No fonts to download. No tracking.
 Use the **Install app** button near the footer. On supported browsers it opens the native installation prompt when available. Otherwise it shows localized instructions for Safari on iPhone/iPad, Android, and desktop browsers. Installation is controlled by the browser; no installation is claimed without its confirmation. The button is hidden in a standalone/minimal-ui app window and after an `appinstalled` event in the current session. A normal browser tab cannot always detect a previous installation.
 
 Installation needs HTTPS or trustworthy localhost. The controls add no dependencies, tracking, network calls or storage keys; existing application data is not modified. On an existing cached version, revisit online and refresh after the service worker has updated to see the button. No automatic reload is forced.
+
+
+## Clean address bar
+
+Typing, unit changes, language changes, swapping and resetting no longer write comparison values to the address bar. Share creates a separate comparison URL without changing the current address. Existing shared comparison links still load their values and language; the comparison fragment is then removed from the address bar without a reload. Reloading the clean address starts with the default comparison, not the previous values.

@@ -1,7 +1,7 @@
 /* Service Worker — Which is Cheaper?
    Cache-first strategy for app shell, so the app works fully offline. */
 
-const CACHE_NAME = "cheaper-v4";
+const CACHE_NAME = "cheaper-v5";
 const ASSETS = [
   "./",
   "./index.html",

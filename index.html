@@ -1022,7 +1022,6 @@
     unitB.value  = "g";
     clearCards();
     render();
-    updateHash();
     try { priceA.focus(); } catch(e){}
   }
 
@@ -1039,10 +1038,12 @@
     if(!hash) return;
     var parts = hash.split("~");
     if(parts.length < 6) return;
-    var vals = parts.map(function(x){ return decodeURIComponent(x); });
+    var vals;
+    try { vals = parts.map(function(x){ return decodeURIComponent(x); }); }
+    catch(e) { return; }
     priceA.value = vals[0]; sizeA.value = vals[1]; unitA.value = vals[2] || "g";
     priceB.value = vals[3]; sizeB.value = vals[4]; unitB.value = vals[5] || "g";
-    if(vals[6] && I18N[vals[6]]){
+    if(vals[6] && Object.prototype.hasOwnProperty.call(I18N, vals[6])){
       currentLang = vals[6];
       $("langSelect").value = currentLang;
     }
@@ -1062,18 +1063,17 @@
     });
   }
 
-  function updateHash(){
-    var s = encodeState();
-    if(history.replaceState){
-      history.replaceState(null, "", "#" + s);
-    } else {
-      location.hash = s;
-    }
+  // Read shared comparisons on arrival, without keeping their values in the address bar.
+  function cleanComparisonUrl(){
+    if(location.hash.slice(1).split("~").length < 6) return;
+    try { history.replaceState(history.state, "", location.pathname + location.search); }
+    catch(e) { /* Do not navigate/reload or discard the comparison if history is unavailable. */ }
   }
 
   function share(){
-    updateHash();
-    var url = location.href;
+    var sharedUrl = new URL(location.href);
+    sharedUrl.hash = encodeState();
+    var url = sharedUrl.href;
     var title = t("page_title");
     if(navigator.share){
       navigator.share({ title: title, url: url }).catch(function(){});
@@ -1110,13 +1110,20 @@
   }
 
   // ---------- Wire events ----------
+  window.addEventListener("hashchange", function(){
+    if(location.hash.slice(1).split("~").length < 6) return;
+    decodeState(location.hash.slice(1));
+    cleanComparisonUrl();
+    applyTranslations();
+    render();
+  });
   var inputs = [priceA, sizeA, unitA, priceB, sizeB, unitB];
   inputs.forEach(function(el){
-    el.addEventListener("input", function(){ render(); updateHash(); });
-    el.addEventListener("change", function(){ render(); updateHash(); });
+    el.addEventListener("input", function(){ render(); });
+    el.addEventListener("change", function(){ render(); });
   });
 
-  $("swapBtn").addEventListener("click", function(){ swap(); updateHash(); });
+  $("swapBtn").addEventListener("click", function(){ swap(); });
   $("resetBtn").addEventListener("click", resetAll);
   $("shareBtn").addEventListener("click", share);
 
@@ -1131,7 +1138,6 @@
       currentLang = v;
       try { localStorage.setItem("lang", currentLang); } catch(err){}
       applyTranslations();
-      updateHash();
     }
   });
 
@@ -1151,8 +1157,10 @@
   if(location.hash && location.hash.length > 1){
     var testParts = location.hash.slice(1).split("~");
     if(testParts.length >= 7){
-      var cand = decodeURIComponent(testParts[6]);
-      if(I18N[cand]) urlLang = cand;
+      try {
+        var cand = decodeURIComponent(testParts[6]);
+        if(Object.prototype.hasOwnProperty.call(I18N, cand)) urlLang = cand;
+      } catch(e) { /* Malformed shared fragments must not break the app. */ }
     }
   }
   if(urlLang){
@@ -1174,15 +1182,14 @@
 
   initTheme();
 
+  priceA.value = "4.99"; sizeA.value = "500"; unitA.value = "g";
+  priceB.value = "6.49"; sizeB.value = "750"; unitB.value = "g";
   if(location.hash && location.hash.length > 1){
     decodeState(location.hash.slice(1));
-  } else {
-    priceA.value = "4.99"; sizeA.value = "500"; unitA.value = "g";
-    priceB.value = "6.49"; sizeB.value = "750"; unitB.value = "g";
+    cleanComparisonUrl();
   }
 
   applyTranslations();
-  updateHash();
   render();
 
 })();
