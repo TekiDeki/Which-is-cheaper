@@ -1,96 +1,61 @@
-**Which of these two products is actually cheaper?**
+# Which is Cheaper?
 
-Type in two products (price + size), and the app instantly tells you the
-price per unit and highlights the winner in big green text. That's it.
+**Compare value, not just the price tag.** A local price-per-unit calculator by [TekiDeki](https://github.com/TekiDeki).
 
-🔗 **Live app:** https://tekideki.github.io/Which-is-cheaper/
+**[Open app](https://tekideki.github.io/Which-is-cheaper/)** · [Support development](https://paypal.me/TekiDeki) · [Apache-2.0](LICENSE)
 
----
+## Features
 
-## ✨ Features
+- Compare two products instantly, including **multipacks and one percentage discount** per product.
+- Enter the **price of the entire pack**, quantity **per item**, unit, number of items (default 1), and discount (default 0%). Shipping, deposits, coupons and tax differences are not automatically included.
+- Mass: **g, kg, oz, lb**; volume: **ml, L**; count: **ct**. Mass ounces are not fluid ounces. Different families cannot be compared.
+- Price per 100 g/kg, 100 ml/L or item, after discount. A clear winner and percentage difference, plus a **proportional saving for equal quantities**. That saving can involve fractional packs; it is **not a checkout total**.
+- Exact scaled-integer cross-products choose the winner. Rounding is only for display, so mathematically equal prices do not produce false winners from floating-point noise. Small nonzero percentage differences are shown as `<0.01%`, not `0% cheaper`. Almost-total but non-free savings are shown as `>99.99%`, not a misleading `100%`.
+- Strict dot/comma decimal input, visible labels and localized field errors. Text suffixes, exponents and grouping separators are rejected, not partially parsed.
+- **EN / RO / SR Latin / SR Cyrillic**, working language URLs, localized metadata, light/dark themes, responsive layout, keyboard focus, pinch zoom, visible FAQs.
+- Clean address bar during editing. Share creates a separate comparison link; existing legacy comparison links still load and are then cleaned without reloading.
+- Install button: native prompt when available; otherwise browser instructions for iOS/Android/desktop. Offline after a successful initial online visit and service-worker installation. Browser/platform support varies.
 
-- ⚡ **Instant comparison** - no "Calculate" button, results update as you type
-- 📏 **Automatic unit conversion** - g ↔ kg ↔ oz ↔ lb, ml ↔ L, plus a generic count unit
-- 🎯 **Smart display units** - shows price per 100g, per kg, per 100ml, or per L automatically
-- 🏆 **Clear verdict** - "A is 12% cheaper" with big visual winner/loser highlighting
-- 🌗 **Light & dark theme** - respects your system preference, remembers your choice
-- 🌍 **4 languages** - English, Română, Srpski (latinica), Српски (ћирилица)
-- 🔗 **Shareable links** - the address stays clean; comparison links are created only when you press Share
-- 📱 **Mobile-first** - 48px touch targets, numeric keypad, no zoom jank
-- 📦 **Works offline** - full PWA with service worker caching
-- 🪶 **Zero dependencies** - no frameworks, no build step, no tracking
-- 💾 **~18 KB total** - loads instantly on any connection
+## Example
 
----
+| Product | Whole-pack price | Quantity per item | Items per pack | Unit price |
+|---|---:|---:|---:|---:|
+| A | 4.99 | 500 g | 1 | 0.998 per 100 g |
+| B | 6.49 | 750 g | 1 | ≈0.865333 per 100 g |
 
-## 🚀 How to Use
+**B is approximately 13.29% cheaper per unit.** Use the same currency for both inputs; there is no currency conversion. Packaging, quality and whether the larger quantity will actually be used also matter.
 
-1. Open the app: **https://tekideki.github.io/Which-is-cheaper/**
-2. Enter **Product A** - price + size + unit
-3. Enter **Product B** - price + size + unit
-4. Read the verdict. 🏆
+Multipack example: A costs 6 for 6 × 330 ml; B costs 5 for 1 × 1.5 L. A costs ≈3.03/L and B ≈3.33/L, so A is about 9.09% cheaper per unit before discounts.
 
-That's it. No account, no ads, no data leaves your browser.
+## Numeric model and bounds
 
-### Example
+Inputs accept a decimal dot **or** comma and up to **6 decimal places**, with no thousands separators. `1,234` means decimal 1.234, not 1,234 items; `1,234.56` is rejected. Prices: **0–1,000,000,000**. Quantity per item: **0.000001–1,000,000,000**. Pack count: a whole number **1–1,000,000**. Discount: **0–100%**. A zero price/100% discount is allowed; zero quantity is not.
 
-| Product | Price | Size | Unit | Result |
-|---|---|---|---|---|
-| A | 4.99 | 500 | g | **$0.99 / 100g** ✅ |
-| B | 6.49 | 750 | g | $0.87 / 100g |
+Decimal values are parsed into millionths with `BigInt`. Exact conversion factors use billionths of a gram/milliliter/count unit: **1 oz = 28.349523125 g; 1 lb = 453.59237 g**. Discounted price numerators and total-quantity numerators are compared by cross multiplication. `Number`/`Intl` are used only for displayed prices, percentages and proportional estimates. Very large/tiny values may use scientific notation. This is a shopping aid, not an accounting, tax or billing system; no currency-specific checkout rounding is applied.
 
-→ **B is 12% cheaper** (per 100g)
+## Privacy and sharing
 
----
+No backend, analytics, tracking, external scripts, fonts, runtime libraries or comparison history. **Only language and theme** are saved using the existing local-storage keys `lang` and `theme`. Calculations remain in page memory. Reloading a clean URL starts with the default comparison, not previous inputs.
 
-## 🧠 Why It's Useful
+Choosing Share intentionally sends a link containing the comparison to the selected sharing app/clipboard. Anyone with that link can see its values. The page address itself is not changed by sharing. A denied native share does not falsely report a copied link; clipboard/legacy copy success is checked and manual copying is offered if automatic copying fails.
 
-We've all stood in a grocery aisle comparing a 500g box at $4.99 vs a 750g
-box at $6.49 and given up. This app solves that in **under 3 seconds**.
+Simple comparisons use the existing 7-part fragment format. Advanced multipack/discount comparisons use a bounded **`v2` fragment**. Current code reads both legacy 6/7-part and v2 links, validates all fields/units/language before applying anything, rejects malformed/oversized comparisons and cleans recognized comparison fragments. Unrelated anchors and query parameters are not removed. Shared links encode the selected language; unrelated query parameters are preserved, while a stale `lang` query is removed from the generated share URL. An older cached app may not understand v2 links: update online and reopen the shared link.
 
-Perfect for:
-- 🛒 Grocery shopping (cereal, coffee, detergent, meat, produce)
-- 📦 Bulk deals ("is the 5kg bag really a better value?")
-- 🧴 Toiletries (shampoo, toothpaste, soap)
-- 🐾 Pet food, baby formula, anything sold in multiple sizes
-- 🍺 Comparing bottles, cans, packs at a bar or store
+## Run / deploy
 
----
+All application CSS, JS, translations and calculations are embedded in **`index.html`**. There is no build step or runtime dependency. Open that file for basic calculation, or serve the repository:
 
-## 🌍 Supported Units
+```sh
+python3 -m http.server 8092 --bind 0.0.0.0
+# On the same device: http://localhost:8092/
+```
 
-| Family | Units | Auto-converts between |
-|---|---|---|
-| **Mass** | g, kg, oz, lb | ✅ All four |
-| **Volume** | ml, L | ✅ Both |
-| **Count** | ct / buc / kom / ком | - |
+Use HTTPS for deployment and PWA installation. File URLs and ordinary LAN HTTP cannot be promised full PWA/clipboard support. GitHub Pages uses `main`, repository root. The manifest retains its existing installation identity/start URL.
 
-If you compare **different families** (e.g. grams vs milliliters), the app
-tells you honestly: *"Different unit types - can't compare."*
+`sw.js` uses the app-only **`cheaper-v6`** cache, network-first HTML navigation and a fixed offline shell (including LICENSE/NOTICE). Other apps’ caches are preserved; arbitrary user URLs are not added to this cache. Updates do not clear local storage or force a page reload. Increase the cache version when changing app files.
 
----
+SEO includes localized canonical/hreflang/description, Open Graph/Twitter, a factual WebApplication schema, FAQ schema matching **visible** FAQ content, sitemap and robots. There is no invented aggregate rating. JavaScript-free crawlers/social previews may use the default English metadata; no search ranking or indexing guarantee is made.
 
-## 🛠️ Tech Stack
+## License
 
-- **HTML5** - one file, semantic markup
-- **CSS3** - custom properties for theming, no preprocessor
-- **Vanilla JavaScript** - no frameworks, no bundler, no npm
-- **Service Worker** - offline caching (cache-first strategy)
-- **Web App Manifest** - installable as a PWA
-- **JSON-LD** - structured data for SEO (WebApplication, FAQPage, BreadcrumbList)
-
-No external CDNs. No analytics. No fonts to download. No tracking.
-
----
-
-
-## Install app
-
-Use the **Install app** button near the footer. On supported browsers it opens the native installation prompt when available. Otherwise it shows localized instructions for Safari on iPhone/iPad, Android, and desktop browsers. Installation is controlled by the browser; no installation is claimed without its confirmation. The button is hidden in a standalone/minimal-ui app window and after an `appinstalled` event in the current session. A normal browser tab cannot always detect a previous installation.
-
-Installation needs HTTPS or trustworthy localhost. The controls add no dependencies, tracking, network calls or storage keys; existing application data is not modified. On an existing cached version, revisit online and refresh after the service worker has updated to see the button. No automatic reload is forced.
-
-
-## Clean address bar
-
-Typing, unit changes, language changes, swapping and resetting no longer write comparison values to the address bar. Share creates a separate comparison URL without changing the current address. Existing shared comparison links still load their values and language; the comparison fragment is then removed from the address bar without a reload. Reloading the clean address starts with the default comparison, not the previous values.
+Copyright © 2026 Kristian Mario Mišković (TekiDeki). [Apache License 2.0](LICENSE); see [NOTICE](NOTICE).

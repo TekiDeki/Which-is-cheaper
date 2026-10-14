@@ -1,11 +1,11 @@
 {
   "name": "Which is Cheaper? - Price Per Unit Calculator",
   "short_name": "Cheaper?",
-  "description": "Compare two products instantly and find out which is cheaper per unit. Works offline.",
+  "description": "Compare unit prices, multipacks and discounts locally. Four languages, private calculations and offline PWA.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "lang": "en",
