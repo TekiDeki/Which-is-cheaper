@@ -2,7 +2,7 @@
  * Scoped app shell. Network-first navigation, cached static assets and offline license. */
 'use strict';
 const PREFIX='cheaper-v';
-const CACHE=PREFIX+'6';
+const CACHE=PREFIX+'7';
 const ASSETS=['./','./index.html','./manifest.json','./LICENSE','./NOTICE','./favicon.ico','./apple-touch-icon.png','./icon-192.png','./icon-512.png','./icon-maskable-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
