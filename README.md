@@ -29,7 +29,7 @@ Multipack example: A costs 6 for 6 × 330 ml; B costs 5 for 1 × 1.5 L. A costs 
 
 ## Numeric model and bounds
 
-Inputs accept a decimal dot **or** comma and up to **6 decimal places**, with no thousands separators. `1,234` means decimal 1.234, not 1,234 items; `1,234.56` is rejected. Prices: **0–1,000,000,000**. Quantity per item: **0.000001–1,000,000,000**. Pack count: a whole number **1–1,000,000**. Discount: **0–100%**. A zero price/100% discount is allowed; zero quantity is not.
+Inputs accept a decimal dot **or** comma and up to **6 decimal places**, with no thousands separators. `1,234` means decimal 1.234, not 1,234 items; `1,234.56` is rejected. Prices: **0-1,000,000,000**. Quantity per item: **0.000001-1,000,000,000**. Pack count: a whole number **1-1,000,000**. Discount: **0-100%**. A zero price/100% discount is allowed; zero quantity is not.
 
 Decimal values are parsed into millionths with `BigInt`. Exact conversion factors use billionths of a gram/milliliter/count unit: **1 oz = 28.349523125 g; 1 lb = 453.59237 g**. Discounted price numerators and total-quantity numerators are compared by cross multiplication. `Number`/`Intl` are used only for displayed prices, percentages and proportional estimates. Very large/tiny values may use scientific notation. This is a shopping aid, not an accounting, tax or billing system; no currency-specific checkout rounding is applied.
 
